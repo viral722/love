@@ -102,9 +102,10 @@ button:hover::before { transform: translateX(100%); }
 </head>
 <body>
 
-<audio id="song" controls>
-  <source src="song.mp3" type="audio/mpeg">
+<audio id="song" preload="auto">
+  <source src="./song.mp3" type="audio/mpeg">
 </audio>
+
 
 <div class="container" id="first">
     <div class="card">
@@ -201,4 +202,5 @@ setInterval(moveNo,700); // moves every 0.7s
 </script>
 </body>
 </html>
+
 
