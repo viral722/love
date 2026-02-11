@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forever With You 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --blush: #f7c1d9;
+    --rose: #e8a1c4;
+    --lavender: #e6d9ff;
+    --champagne: #fff4e6;
+    --text: #7a3b5e;
+    --glass: rgba(255, 255, 255, 0.25);
+    --neon-pink: #ff1493;
+    --neon-lavender: #ba55d3;
+    --gold: #ffd700;
+    --silver: #c0c0c0;
+    --holo: linear-gradient(45deg, var(--neon-pink), var(--neon-lavender), var(--gold), var(--blush));
+    --iridescent: linear-gradient(135deg, var(--blush), var(--rose), var(--lavender), var(--champagne));
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    height: 100vh;
+    font-family: 'Pacifico', cursive;
+    background: var(--iridescent);
+    overflow: hidden;
+    perspective: 1200px;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 25% 30%, var(--blush) 50%, transparent 70%),
+        radial-gradient(circle at 75% 70%, var(--rose) 50%, transparent 70%),
+        radial-gradient(circle at 50% 50%, var(--lavender) 30%, transparent 80%);
+    opacity: 0.8;
+    animation: aura 15s infinite alternate;
+}
+
+@keyframes aura {
+    from { opacity: 0.7; filter: hue-rotate(0deg); }
+    to { opacity: 0.9; filter: hue-rotate(30deg); }
+}
+
+/* particles */
+.particle { position: absolute; width: 6px; height: 6px; background: var(--neon-pink); border-radius: 50%; animation: particleFloat 10s infinite linear; box-shadow: 0 0 15px var(--neon-pink), 0 0 30px var(--gold); }
+.particle:nth-child(odd) { background: var(--neon-lavender); box-shadow: 0 0 15px var(--neon-lavender), 0 0 30px var(--silver); }
+@keyframes particleFloat { 0% { transform: translateY(100vh) translateX(0) scale(1); opacity: 1; } 50% { opacity: 0.7; transform: translateY(50vh) translateX(20px) scale(1.2); } 100% { transform: translateY(-100vh) translateX(40px) scale(0.8); opacity: 0; } }
+
+.floating { position: absolute; transform-style: preserve-3d; animation: float3d linear infinite; pointer-events: none; opacity: 0.9; filter: drop-shadow(0 0 25px var(--neon-pink)) brightness(1.1); }
+@keyframes float3d { 0% { transform: translateY(110vh) translateZ(-250px) rotateX(0) rotateY(0) rotateZ(0); } 100% { transform: translateY(-130vh) translateZ(250px) rotateX(360deg) rotateY(360deg) rotateZ(180deg); } }
+
+.page, .container { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; transform-style: preserve-3d; }
+
+.card { background: var(--glass); backdrop-filter: blur(30px); border-radius: 35px; padding: 40px; max-width: 950px; box-shadow: 0 35px 70px rgba(255, 182, 193, 0.4), inset 0 0 25px rgba(255, 255, 255, 0.2), 0 0 40px var(--neon-pink), 0 0 60px var(--gold); transform: translateZ(120px); animation: cardFloat 5s ease-in-out infinite; border: 3px solid transparent; background-clip: padding-box; position: relative; }
+.card::before { content: ''; position: absolute; inset: -3px; background: var(--holo); border-radius: 38px; z-index: -1; animation: holoGlow 4s infinite alternate; filter: blur(1px); }
+.card::after { content: ''; position: absolute; inset: -6px; background: linear-gradient(45deg, var(--gold), var(--silver), var(--neon-pink)); border-radius: 41px; z-index: -2; opacity: 0.5; animation: outerGlow 6s infinite alternate; }
+
+@keyframes holoGlow { from { opacity: 0.6; filter: blur(5px) hue-rotate(0deg); } to { opacity: 1; filter: blur(0px) hue-rotate(45deg); } }
+@keyframes outerGlow { from { opacity: 0.3; transform: scale(1); } to { opacity: 0.7; transform: scale(1.02); } }
+@keyframes cardFloat { 0%, 100% { transform: translateZ(120px) translateY(0) rotateX(0) rotateY(0); } 50% { transform: translateZ(160px) translateY(-15px) rotateX(3deg) rotateY(2deg); } }
+
+.card p { font-size: 30px; line-height: 1.7; color: var(--text); text-shadow: 0 0 12px var(--rose), 0 0 30px var(--lavender), 0 0 50px var(--gold); font-family: 'Poppins', sans-serif; }
+.card b { font-weight: 700; color: var(--neon-pink); text-shadow: 0 0 20px var(--neon-pink), 0 0 40px var(--gold); }
+
+.buttons { display: flex; gap: 30px; margin-top: 40px; flex-wrap: wrap; }
+
+button { padding: 18px 50px; border-radius: 45px; border: none; font-size: 24px; cursor: pointer; font-family: 'Pacifico', cursive; color: white; background: var(--holo); box-shadow: 0 12px 30px rgba(255, 182, 193, 0.6), 0 0 25px var(--neon-pink), 0 0 40px var(--gold); transform-style: preserve-3d; transition: 0.3s; position: relative; overflow: hidden; }
+
+/* dancing Yes button */
+#yes {
+    animation: dance 1s infinite alternate;
+}
+@keyframes dance {
+    0% { transform: translateY(0) rotate(-5deg) scale(1); }
+    25% { transform: translateY(-5px) rotate(5deg) scale(1.05); }
+    50% { transform: translateY(-10px) rotate(-5deg) scale(1.1); }
+    75% { transform: translateY(-5px) rotate(5deg) scale(1.05); }
+    100% { transform: translateY(0) rotate(-5deg) scale(1); }
+}
+
+/* NO button dodge animation handled by JS continuously */
+
+button::before { content: ''; position: absolute; inset: 0; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent); transform: translateX(-100%); transition: transform 0.7s; }
+button:hover::before { transform: translateX(100%); }
+
+.anime { font-size: 60px; margin-top: 30px; animation: animeHop 2.5s infinite; text-shadow: 0 0 25px var(--neon-pink), 0 0 40px var(--gold); }
+@keyframes animeHop { 0%,100%{transform:translateY(0) translateZ(60px) rotateY(0) scale(1);}50%{transform:translateY(-20px) translateZ(90px) rotateY(15deg) scale(1.1);} }
+
+#second, #third { display: none; }
+
+@media (max-width:768px){.card p{font-size:24px}.anime{font-size:50px}button{padding:16px 40px;font-size:22px}}
+</style>
+</head>
+<body>
+
+
+<audio id="song" src="file:///C:/Users/vp223983/Downloads/Tumhi%20Dekho%20Naa%20Kabhi%20Alvida%20Naa%20Kehna%20320%20Kbps.mp3"></audio>
+<audio id="song" src="file:///C:/Users/a227020/Downloads/Tumhi%20Dekho%20Naa%20Kabhi%20Alvida%20Naa%20Kehna%20320%20Kbps.mp3"></audio>
+
+<div class="container" id="first">
+    <div class="card">
+        <p>
+            Log Bachte hai samunder se lekin 💕<br>
+            Hum Tumhari Ankho Main Dubne ko Tayyar Hai 🌸<br><br>
+            Kisko Dekhne Ki Chahat Karein? 🌸<br>
+	    Tum ko Dekh liye hai Ek bar <br>
+	    Tumhari Zulfon Ki Gehraai Hi Bohot Hai <br>
+	    Hamko Nahi Pasand Ata Kinara <br>
+            Log Kehte Hai Chaand Ka Tukda Ho Tum <br>
+	    Hym Kehte Hai Chaand Tukda Hain Tumhara 💕<br>
+            <b>Kya Tere Hard Disk Me Muje Permanent Entry Mil Sakti Hai My Babali ? 🥹❤️</b>
+        </p>
+    </div>
+
+    <div class="buttons">
+        <button id="yes" onclick="yes()">Yes 💍</button>
+        <button id="no">No</button>
+    </div>
+
+    <div class="anime">🐰💖🧸</div>
+</div>
+
+<div class="page" id="second">
+    <div class="card">
+        <p>
+           <br><br><br><br> Congrats My World 😘💖<br><br>
+            Mere Pass Wo Alfaaz Nahi 🥹<br><br>
+            Jo Iss Baat ko Bayana Karein🌸<br>
+            Tum Mere Liye Kya Ho <br>
+            Bas Tum Wo shakhs Ho Jiss Se Mujshe ❤️<br>
+            Be-Panaha Mohabat Hai  💍✨ <br><br>
+
+            Mujhe Sirf Tum Chahiye —<br>
+            Aaj Bhi, Kal Bhi, Hamesha Bhi  ❤️<br>
+
+           Bas EK Shikayat Hamesh Rahegi Tujse ❤️<br><br>
+
+	   Ki Samnadar Bhar Ka Pani Kam Lagta Hai Muje 🥹<br><br>
+           Tu Jitna Bhi Mill Jaye Kam Lagta HaI muje ❤️<br>
+	   Tujse Do Pal Ki Judaai IsI Chubati Hai 🥹<br>
+           Ki Jamae Bhar ka Gaam Lagta Hai Muje 🥹<br><br>
+        </p>
+    </div>
+    <div class="buttons">
+        <button onclick="next()">Next 💕</button>
+        <button onclick="back()">Back</button>
+    </div>
+    <div class="anime">👩‍❤️‍👨💖</div>
+</div>
+
+<div class="page" id="third">
+    <div class="card">
+        <p>
+            Muje Kisi Se Mohabt Nahi Tere Siva 🌷<br>
+            Muje Kisi ki Jarurat Nahi Tere Siva ✨<br><br>
+            Jo Iss Dill Aur Jindagi Pe Raaj Kare 💫<br>
+            Kisi Aur Ko Itni Ijaajat Nahi Tere Siva 💫<br>
+            <b> <b> I love you beyond time </b> 😘❤️</b>
+        </p>
+    </div>
+    <button onclick="back2()">Back 💞</button>
+    <div class="anime">🐰💋🧸</div>
+</div>
+
+<script>
+/* Navigation */
+function yes(){document.getElementById('song').play(); first.style.display='none'; second.style.display='flex';}
+function back(){second.style.display='none';first.style.display='flex';}
+function next(){second.style.display='none';third.style.display='flex';}
+function back2(){third.style.display='none';second.style.display='flex';}
+
+/* Floating hearts & particles */
+const items=['❤️','💖','💘','🌸','🌹','🌷','🌻','💋','🐰','🧸','✨','⭐','💫','🥰','😍','👩‍❤️‍👨','🌟','💎','🔮','🌙','🦋'];
+function spawn(){const e=document.createElement('div');e.className='floating';e.innerText=items[Math.floor(Math.random()*items.length)];e.style.left=Math.random()*100+'vw';e.style.fontSize=(25+Math.random()*45)+'px';e.style.animationDuration=(7+Math.random()*10)+'s';e.style.color=['var(--neon-pink)','var(--neon-lavender)','var(--gold)','var(--rose)'][Math.floor(Math.random()*4)];document.body.appendChild(e);setTimeout(()=>e.remove(),17000);}
+setInterval(spawn,140);
+
+function createParticle(){const p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'vw';p.style.animationDelay=Math.random()*10+'s';p.style.background=['var(--neon-pink)','var(--neon-lavender)','var(--gold)','var(--silver)'][Math.floor(Math.random()*4)];document.body.appendChild(p);setTimeout(()=>p.remove(),10000);}
+setInterval(createParticle,180);
+
+/* NO button automatic dance/move */
+const noBtn=document.getElementById('no');
+function moveNo(){
+    const vw=window.innerWidth-noBtn.offsetWidth;
+    const vh=window.innerHeight-noBtn.offsetHeight;
+    const x=Math.random()*vw;
+    const y=Math.random()*vh;
+    noBtn.style.position='fixed';
+    noBtn.style.left=x+'px';
+    noBtn.style.top=y+'px';
+}
+setInterval(moveNo,700); // moves every 0.7s
+</script>
+</body>
+</html>
