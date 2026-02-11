@@ -102,9 +102,9 @@ button:hover::before { transform: translateX(100%); }
 </head>
 <body>
 
-
-<audio id="song" src="file:///C:/Users/vp223983/Downloads/Tumhi%20Dekho%20Naa%20Kabhi%20Alvida%20Naa%20Kehna%20320%20Kbps.mp3"></audio>
-<audio id="song" src="file:///C:/Users/a227020/Downloads/Tumhi%20Dekho%20Naa%20Kabhi%20Alvida%20Naa%20Kehna%20320%20Kbps.mp3"></audio>
+<audio id="song" controls>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
 
 <div class="container" id="first">
     <div class="card">
@@ -201,3 +201,4 @@ setInterval(moveNo,700); // moves every 0.7s
 </script>
 </body>
 </html>
+
